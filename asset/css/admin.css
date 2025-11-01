@@ -1,0 +1,316 @@
+/* COLOR SECTION */
+
+:root {
+    --navbar-bg-admin: #203e0c;
+    --sidebar-bg-admin: #2f690b;
+    --sidebar-border: #203e0c;
+    --sidebar-hover: #387c0f;
+    --sidebar-text: aliceblue;
+    --table-border: #d3d3d3;
+    --table-color: lightgrey;
+    --edit-color: green;
+    --delete-color: red;
+    --label-text: black;
+    --text-input-bg: white;
+    --text-input-border: #ddd;
+}
+
+
+/* NAVBAR STYLING */
+
+header {
+    background: var(--navbar-bg-admin);
+}
+
+
+/* ADMIN SIDEBAR STYLING */
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+.admin-wrapper .left-sidebar,
+.admin-wrapper .admin-content {
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.admin-wrapper .left-sidebar {
+    background: var(--sidebar-bg-admin);
+    flex-basis: 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.admin-wrapper .left-sidebar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.admin-wrapper .left-sidebar ul li a {
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid var(--sidebar-border);
+    color: var(--sidebar-text);
+    text-decoration: none;
+}
+
+.admin-wrapper .left-sidebar ul li a:hover {
+    background: var(--sidebar-hover);
+}
+
+
+/* ADMIN CONTENT STYLING */
+
+.admin-wrapper .admin-content {
+    flex-basis: 90%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.admin-content .page-title {
+    text-align: center;
+    margin-bottom: 1.7rem;
+    border-collapse: collapse;
+    margin-top: 0.8rem;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.content {
+    min-height: 800px;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.box-top,
+.box-center,
+.box-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+}
+
+.box-top canvas,
+.box-center canvas,
+.box-bottom canvas {
+    min-width: 350px;
+    height: 350px !important;
+    background-color: var(--text-input-bg);
+    border: 2px solid var(--label-text);
+}
+
+.content-dashboard {
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+canvas {
+    width: 100% !important;
+    max-width: 600px;
+    height: auto !important;
+    text-align: center;
+    background-color: var(--text-input-bg);
+    border: 2px solid var(--label-text);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.data-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.filter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.date-form,
+.csv-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .box-top,
+    .box-center,
+    .box-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .content-dashboard {
+        padding-top: 30px;
+        gap: 15px;
+    }
+    canvas {
+        width: 100% !important;
+        max-width: 600px;
+        height: auto !important;
+    }
+    .filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .date-form,
+    .csv-form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .date-form input[type="date"],
+    .csv-form button,
+    .date-form button {
+        width: 100%;
+    }
+    .data-section {
+        padding: 15px;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: center;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pagination a {
+    padding: 6px 12px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* TABLE STYLING */
+
+.mejauser {
+    width: 100%;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2.5px solid var(--table-border);
+}
+
+.mejauser td {
+    padding: 15px;
+}
+
+.meja_post th {
+    text-align: center;
+}
+
+.meja_post td {
+    padding: 15px;
+    text-align: justify;
+    border-bottom: 2.5px solid var(--table-border);
+}
+
+.tabelwarna {
+    background-color: var(--table-color);
+}
+
+
+/* ADMIN ACTION STYLING */
+
+.edit {
+    color: var(--edit-color);
+}
+
+.delete {
+    color: var(--delete-color);
+}
+
+.edit:hover,
+.delete:hover {
+    text-decoration: underline;
+}
+
+
+/* ADMIN FORM STYLING (ADD & EDIT PAGE)*/
+
+form {
+    display: grid;
+}
+
+label {
+    display: block;
+    color: var(--label-text);
+}
+
+label select.text-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid var(--text-input-border);
+    border-radius: 4px;
+    background-color: var(--text-input-bg);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 5px;
+    border: 1px solid var(--text-input-border);
+    border-radius: 4px;
+}

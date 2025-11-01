@@ -1,6 +1,10 @@
 # Eco-enzyme Quality Monitoring System
 An Internet of Things (IoT) based monitoring platform designed to track and analyze the quality of eco-enzyme liquid in real time. The system collects multiple environmental parameters through sensors installed inside an eco-enzyme box, stores the data in a cloud database, and visualizes it through a responsive web dashboard.
 
+# 📺 Demo Video
+Watch the project demo here:
+https://www.youtube.com/watch?v=hNzzhEQgTMg
+
 # ✨ Features
 - Real-time sensor data collection
 - Web-based dashboard for data visualization
